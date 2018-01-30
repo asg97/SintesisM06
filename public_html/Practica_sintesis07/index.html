@@ -2,23 +2,103 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <script src="index.js" type="text/javascript"></script>
+        
+        <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" type="text/css"/>
+        <link rel="stylesheet" href="../bootstrap-3.3.7-dist/css/bootstrap.css" type="text/css">
+        <script src="../holder.min.js" type="text/javascript"></script>
+        <script src="holder.js" type="text/javascript"></script>
+        <script src="../jquery-3.2.1.min.js" type="text/javascript"></script>
+        <script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js" type="text/javascript"></script>
+        
+        
     </head>
-    <body onload="infoscreen()">
-
+    <body>
         <div class="container">
-            <h2>Dropdowns</h2>                                      
-            <div class="dropdown" >
-                <button  class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">info pantalla
-                    <span class="caret"></span></button>
-                <ul id="screen" class="dropdown-menu">
-                    
-                </ul>
-            </div>
-        </div>
+            <div class="row">
 
+                <div class="col-xs-12">
+                    <div class="btn-group btn-group-justified">
+                        <a data-target="#listaPropiedadesPantalla"  class="btn btn-primary" data-toggle="collapse " >info Pantalla<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#listaPropiedadesNavegador"  class="btn btn-primary" data-toggle="collapse" >info Navegador<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#listaPropiedadesHostweb"  class="btn btn-primary" data-toggle="collapse" >info Host i web<span class="glyphicon-chevron-down"></span></a>
+
+
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="row">
+
+
+                <div class="col-xs-4">
+                    <div id="listaPropiedadesPantalla" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-4">
+                    <div id="listaPropiedadesNavegador" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-4">
+                    <div id="listaPropiedadesHostweb" class="collapse in"></div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <div class="btn-group btn-group-justified">
+                        <a data-target="#glyphIcon1"  class="btn btn-primary" data-toggle="collapse" >1<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#glyphIcon2"  class="btn btn-primary" data-toggle="collapse" >2<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#glyphIcon3"  class="btn btn-primary" data-toggle="collapse" >3<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#glyphIcon4"  class="btn btn-primary" data-toggle="collapse" >4<span class="glyphicon-chevron-down"></span></a>
+                        <a data-target="#glyphIcon15"  class="btn btn-primary" data-toggle="collapse" >5<span class="glyphicon-chevron-down"></span></a>
+
+
+                    </div>
+
+
+
+                </div>
+
+
+
+
+            </div>
+
+            <div class="row" style="text-align: center">
+
+
+                <div class="col-xs-2">
+                    <div id="glyphIcon1" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-3">
+                    <div id="glyphIcon2" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-2">
+                    <div id="glyphIcon3" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-3">
+                    <div id="glyphIcon4" class="collapse in"></div>
+
+                </div>
+                <div class="col-xs-2">
+                    <div id="glyphIcon15" class="collapse in"></div>
+
+                </div>
+            </div>
+            <br>
+
+            <div style="text-align: center"><button id="juegoprueba" class='btn btn-info' style="font-size: 25px">Empezar Quiz Game</button></div>
+
+        </div> 
+
+        <script src="index.js" type="text/javascript"></script>
     </body>
+
+
 </html>

@@ -1,0 +1,103 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Trivial con Javascript | Pablo Monteserín</title>
+	        <meta name="description" content="Ejemplo un juego de preguntas tipo trivial que utiliza Javascript en el que tanto las preguntas como las respuestas se van reordenando aleatoriamente">
+
+ Latest compiled and minified JS 
+<script src="http://code.jquery.com/jquery.js"></script>
+
+
+</head>
+<body>
+<h1>Ejemplo de trivial sencillo programado con Javascript</h1>
+	<div id="pregunta"></div>
+	<div id="respuestas"></div>
+
+<input type="button" value="a ver si acerté" onclick="comprobar()">
+	<script>
+		var preguntas = [
+		"¿Quien descubrió América?",
+		"¿Quién es el mayor superheroe de todos los tiempos?",
+		"¿Por qué lo pájaros pían?"
+
+		];
+		var respuestas = [
+		["Colón", "El Fari", "Yo mismo", "Tú"],
+		["Spiderman", "Batman", "Yo mismo", "Tú mismo"],
+		["Tienen hambre", "Tienen frío", "Están contentos", "Están tristes"]
+
+		];
+jugar();
+
+		var indicie_respuesta_correcta;
+
+function jugar(){
+			var indice_aleatorio = Math.floor(Math.random()*preguntas.length);
+
+
+		var respuestas_posibles = respuestas[indice_aleatorio];
+
+
+		var posiciones = [0,1,2,3];
+		var respuestas_reordenadas = [];
+
+		var error = false;
+		for(i in respuestas_posibles){
+			var posicion_aleatoria = Math.floor(Math.random()*posiciones.length);
+			if(posicion_aleatoria===0 && error === false){
+				indicie_respuesta_correcta =i;
+				ya_se_metio = true;
+			}
+			respuestas_reordenadas[i] = respuestas_posibles[posiciones[posicion_aleatoria]];
+			posiciones.splice(posicion_aleatoria, 1);
+		}
+
+		var txt_respuestas="";
+		for(i in respuestas_reordenadas){
+			txt_respuestas += '<input type="radio" name="pp" value="'+i+'"><label>'+respuestas_reordenadas[i]+'</label><br>';
+		}
+
+		document.getElementById("respuestas").innerHTML = txt_respuestas;
+		document.getElementById("pregunta").innerHTML = preguntas[indice_aleatorio];
+
+}
+function comprobar(){
+	var respuesta = $("input[type=radio]:checked").val();
+
+	//alert(respuesta);
+	//alert(indicie_respuesta_correcta);
+	if(respuesta ===indicie_respuesta_correcta){
+		alert("Respuesta correcta");
+	}else{
+		alert("Respuesta incorrecta");
+	}
+	jugar();
+}
+	</script>
+
+</body>
+</html>-->
+<link href="Preguntas.css" rel="stylesheet" type="text/css"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.2/jquery-ui.min.js"></script>
+<link href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet"/>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js"></script>
+<h1>Quiz</h1>
+<br/>
+<br/>
+<a href="#" id="start" class="btn btn-primary btn-lg">Let's Begin</a>
+<br/>
+<div class="well jumbotron">
+  <h3 id="question"></h3>
+  <br/><br/>
+  <form id="form">
+
+  </form>
+  <br/>
+  <a href="#" id="next" class="button">Next</a><br/>
+  <div id="progressbar" class="progress-bar progress-bar-striped"></div>
+</div>
+<div id="result"></div>
+<script src="Preguntas.js" type="text/javascript"></script>
